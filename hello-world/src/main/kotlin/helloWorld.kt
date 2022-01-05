@@ -14,7 +14,18 @@ fun sum(a: Int, b: Int): Int {
     return a + b
 }
 
+fun parseInt2(str: String): String? {
+    val numberList = listOf("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+
+    return if (numberList.contains(str)) {
+        str
+    } else {
+        null
+    }
+}
+
 fun sum2(a: Int, b: Int) = a + b
+fun shorterFunc(a: Int, b: Int) = if (a > b) a else b
 
 fun stringTemp(): String {
     var a = 1
