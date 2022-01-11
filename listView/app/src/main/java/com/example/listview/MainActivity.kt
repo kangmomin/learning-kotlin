@@ -20,14 +20,14 @@ class MainActivity : AppCompatActivity() {
         User(R.drawable.android, "herld", "25", "hello World"),
         User(R.drawable.android, "World", "28", "hello World"),
         User(R.drawable.android, "hello", "22", "hello World")
-    )
+    ) //arrayList 선언
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
-        val adapter = UserAdapter(this, userList)
+        val adapter = UserAdapter(this, userList) //커스텀 어뎁터 선언
         binding.listView.adapter = adapter
 
         binding.listView.onItemClickListener = AdapterView.OnItemClickListener { parent, view, position, id -> //아마 콜백 함수의 인자 정도로 해석하면 될 듯 함.
@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, selectItem.name, Toast.LENGTH_SHORT).show()
         }
 //        val item = arrayOf("사과", "배", "딸기")
-//        binding.listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, item)
+//        binding.listView.adapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, item) //기본 어뎁터
 
     }
 }
